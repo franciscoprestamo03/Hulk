@@ -2,7 +2,8 @@ namespace Hulk.Library.Grammar
 {
     public enum SyntaxType
     {
-        NumericalExpression,
+        NumberToken,
+        WhitespaceToken,
         AdditionToken,
         SubtractionToken,
         MultiplicationToken,
@@ -10,6 +11,12 @@ namespace Hulk.Library.Grammar
         OpenParenthesisToken,
         CloseParenthesisToken,
         ErrorToken,
+        EndOfFileToken,
+
+        //Expressions
         
+        NumericalExpression,
+        BinaryExpression,
+        ParenthesizedExpression
     }
 }
