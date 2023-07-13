@@ -1,0 +1,14 @@
+
+Hulk/bin/Debug/net6.0/Hulk.deps.json
+Hulk/.vs/Hulk/xs/project-cache/Hulk-Debug.json
+*.xml
+*.dll
+Hulk/obj/Debug/net6.0/apphost
+Hulk/obj/Debug/net6.0/Hulk.csproj.CoreCompileInputs.cache
+Hulk/obj/Debug/net6.0/Hulk.csproj.FileListAbsolute.txt
+Hulk/obj/Debug/net6.0/Hulk.genruntimeconfig.cache
+Hulk/obj/Debug/net6.0/Hulk.pdb
+*.sln
+Hulk/bin/Debug/net6.0/Hulk
+*.pdb
+*.json
