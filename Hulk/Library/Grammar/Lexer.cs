@@ -15,13 +15,22 @@ namespace Hulk.Library.Grammar
             position = 0;
         }
 
-        private char Current{get => LineText[position];}
+        private char Current
+        {
+            get
+            {
+                if (position >= LineText.Length)
+                    return '\0';
+
+                return LineText[position];
+            }
+        }
 
         private void Next(){
             position++;
         }
 
-        public Token NextToken(){
+        public Token Lex(){
 
             if (position >= LineText.Length)
                 return new Token(SyntaxType.EndOfFileToken, null);
@@ -48,19 +57,24 @@ namespace Hulk.Library.Grammar
 
                 return new Token(SyntaxType.WhitespaceToken, null);
             }
-
-            if (Current == '+')
-                return new Token(SyntaxType.AdditionToken, null);
-            else if (Current == '-')
-                return new Token(SyntaxType.SubtractionToken,  null);
-            else if (Current == '*')
-                return new Token(SyntaxType.MultiplicationToken,  null);
-            else if (Current == '/')
-                return new Token(SyntaxType.DivisionToken, null);
-            else if (Current == '(')
-                return new Token(SyntaxType.OpenParenthesisToken,  null);
-            else if (Current == ')')
-                return new Token(SyntaxType.CloseParenthesisToken, null);
+            var current = Current;
+            Next();
+            switch (current)
+            {
+                
+                case '+':
+                    return new Token(SyntaxType.AdditionToken, null);
+                case '-':
+                    return new Token(SyntaxType.SubtractionToken, null);
+                case '*':
+                    return new Token(SyntaxType.MultiplicationToken, null);
+                case '/':
+                    return new Token(SyntaxType.DivisionToken, null);
+                case '(':
+                    return new Token(SyntaxType.OpenParenthesisToken, null);
+                case ')':
+                    return new Token(SyntaxType.CloseParenthesisToken, null);
+            }
 
             return new Token(SyntaxType.ErrorToken,null);
             
