@@ -8,9 +8,9 @@ namespace Hulk.Library.Grammar
     internal class Token:Node
     {
         public override SyntaxType Type { get; }
-        public object Value { get; }
+        public object? Value { get; }
 
-        public Token(SyntaxType type, object value){
+        public Token(SyntaxType type, object? value){
             Value = value;
             Type = type;
         }
